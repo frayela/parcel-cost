@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Parcel</h1>
+    <form action="#" th:action="@{/parcels}" th:object="${parcels}" method="post">
+    	<p>Voucher: <input type="text" /><input type="submit" value="Validate" /></p>
+    	<p th:text="'Discount: ' + ${parcels.discount}" />
+        <p>Weight (kg): <input type="number" th:field="*{weight}" /></p>
+        <p>Height (cm): <input type="number" th:field="*{height}" /></p>
+        <p>Width (cm): <input type="number" th:field="*{width}" /></p>
+        <p>Length (cm): <input type="number" th:field="*{length}" /></p>
+        <p th:text="'Parcel Cost: ' + ${parcels.cost}" /><input type="submit" value="Compute" /></p>
+    </form>
+</body>
+</html>
